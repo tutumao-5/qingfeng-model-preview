@@ -892,8 +892,8 @@
 
     .intro-logo-shell {
       position: relative;
-      width: min(720px, 82vw);
-      aspect-ratio: 1.18;
+      width: min(720px, 84vw);
+      aspect-ratio: 2.06;
       display: grid;
       place-items: center;
     }
@@ -908,12 +908,12 @@
     }
 
     .intro-logo-shell::before {
-      inset: 12%;
+      inset: 4% 10%;
       animation: ringSweep 7s linear infinite;
     }
 
     .intro-logo-shell::after {
-      inset: 22%;
+      inset: 16% 18%;
       border-color: rgba(255, 123, 35, 0.22);
       animation: ringSweep 10s linear infinite reverse;
     }
@@ -921,33 +921,14 @@
     .intro-main-logo {
       position: relative;
       z-index: 2;
-      width: min(620px, 78vw);
+      width: min(680px, 82vw);
       display: block;
       filter:
-        saturate(1.08)
         contrast(1.08)
-        drop-shadow(0 24px 44px rgba(0, 0, 0, 0.58))
-        drop-shadow(0 0 18px rgba(43, 141, 255, 0.18));
-    }
-
-    .intro-logo-plate {
-      position: absolute;
-      z-index: 1;
-      left: 50%;
-      top: 70%;
-      width: min(530px, 67vw);
-      height: clamp(112px, 15vw, 164px);
-      transform: translate(-50%, -50%) skewX(-6deg);
-      border-radius: 18px;
-      background:
-        linear-gradient(115deg, rgba(255, 255, 255, 0.92), rgba(245, 250, 255, 0.98) 45%, rgba(255, 255, 255, 0.9)),
-        radial-gradient(circle at 18% 50%, rgba(43, 141, 255, 0.12), transparent 55%);
-      box-shadow:
-        0 20px 48px rgba(0, 0, 0, 0.38),
-        0 0 0 1px rgba(158, 232, 255, 0.16),
-        inset 0 1px 0 rgba(255, 255, 255, 0.9);
-      opacity: 0.96;
-      pointer-events: none;
+        saturate(1.05)
+        drop-shadow(0 24px 44px rgba(0, 0, 0, 0.62))
+        drop-shadow(0 0 18px rgba(158, 232, 255, 0.32))
+        drop-shadow(0 0 42px rgba(43, 141, 255, 0.18));
     }
 
     .intro-title {
@@ -1246,14 +1227,7 @@
       }
 
       .intro-logo-shell {
-        width: 96vw;
-      }
-
-      .intro-logo-plate {
-        top: 70%;
-        width: 74vw;
-        height: clamp(82px, 24vw, 124px);
-        border-radius: 14px;
+        width: 92vw;
       }
 
       .intro-title {
@@ -1463,8 +1437,7 @@
     <div class="intro-center">
       <div class="intro-lockup">
         <div class="intro-logo-shell" aria-hidden="true">
-          <span class="intro-logo-plate" aria-hidden="true"></span>
-          <img class="intro-main-logo" src="assets/v3/logo-qingfeng-main.png" alt="">
+          <img class="intro-main-logo" src="assets/v3/logo-qingfeng-intro-mark.png" alt="">
         </div>
         <p class="intro-title" id="introTitle" data-text="擎风模型队"></p>
         <p class="intro-subtitle">车模 · 海模 · 航模 | SCHOOL MODEL TEAM</p>
