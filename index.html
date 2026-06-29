@@ -1,0 +1,1834 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>擎风模型队 | 浙江师范大学附属杭州笕文实验学校</title>
+  <meta name="description" content="擎风模型队品牌宣传官网，展示浙江师范大学附属杭州笕文实验学校车模、海模、航模方向的校队成果与发展。">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%2305070b'/%3E%3Cpath d='M12 40h24l9-11h7l-10 17H12z' fill='%232b8dff'/%3E%3Cpath d='M13 29c8-9 19-12 33-9l-7 6c-9-2-17-1-26 3z' fill='%23ff7b23'/%3E%3Cpath d='M17 43h22' stroke='white' stroke-width='4' stroke-linecap='round'/%3E%3C/svg%3E">
+  <style>
+    :root {
+      color-scheme: dark;
+      --bg: #05070b;
+      --bg-soft: #0a0f18;
+      --ink: #f7fbff;
+      --muted: rgba(232, 240, 255, 0.68);
+      --line: rgba(157, 205, 255, 0.18);
+      --line-strong: rgba(157, 205, 255, 0.34);
+      --blue: #2b8dff;
+      --blue-deep: #07307d;
+      --cyan: #9ee8ff;
+      --orange: #ff7b23;
+      --gold: #ffd166;
+      --panel: rgba(5, 10, 18, 0.64);
+      --glass: rgba(9, 19, 32, 0.56);
+      --shadow: 0 28px 80px rgba(0, 0, 0, 0.42);
+      --ease: cubic-bezier(0.16, 1, 0.3, 1);
+      --mono: "SFMono-Regular", "Cascadia Mono", "Menlo", "Consolas", monospace;
+      --sans: "PingFang SC", "Microsoft YaHei", "Noto Sans CJK SC", system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      background: var(--bg);
+    }
+
+    body {
+      margin: 0;
+      min-width: 320px;
+      font-family: var(--sans);
+      color: var(--ink);
+      background:
+        radial-gradient(circle at 22% 8%, rgba(43, 141, 255, 0.16), transparent 34rem),
+        radial-gradient(circle at 80% 0%, rgba(255, 123, 35, 0.12), transparent 28rem),
+        linear-gradient(180deg, #05070b 0%, #07101b 45%, #04060a 100%);
+      overflow-x: hidden;
+    }
+
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      z-index: 0;
+      background-image:
+        linear-gradient(rgba(158, 232, 255, 0.045) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(158, 232, 255, 0.035) 1px, transparent 1px);
+      background-size: 48px 48px;
+      mask-image: linear-gradient(180deg, rgba(0, 0, 0, 0.7), transparent 72%);
+    }
+
+    body::after {
+      content: "";
+      position: fixed;
+      inset: 0;
+      z-index: 0;
+      pointer-events: none;
+      opacity: 0.32;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 160 160' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.88' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.55'/%3E%3C/svg%3E");
+      mix-blend-mode: screen;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    button {
+      font: inherit;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    .site-shell {
+      position: relative;
+      z-index: 1;
+    }
+
+    .site-nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 40;
+      height: 76px;
+      display: grid;
+      grid-template-columns: minmax(180px, 310px) 1fr auto;
+      align-items: center;
+      gap: 24px;
+      padding: 12px clamp(18px, 4vw, 56px);
+      background: linear-gradient(180deg, rgba(2, 5, 10, 0.86), rgba(2, 5, 10, 0.48) 70%, transparent);
+      backdrop-filter: blur(16px);
+      border-bottom: 1px solid rgba(157, 205, 255, 0.1);
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      min-width: 0;
+      justify-self: start;
+      padding: 0;
+      border-radius: 0;
+      background: transparent;
+      border: 0;
+      box-shadow: none;
+    }
+
+    .brand img {
+      width: min(252px, 44vw);
+      height: auto;
+      border-radius: 0;
+      filter:
+        brightness(1.26)
+        saturate(1.12)
+        contrast(1.04)
+        drop-shadow(0 0 1px rgba(255, 255, 255, 0.55))
+        drop-shadow(0 12px 28px rgba(0, 0, 0, 0.42))
+        drop-shadow(0 0 22px rgba(43, 141, 255, 0.26));
+    }
+
+    .nav-links {
+      display: flex;
+      justify-content: center;
+      gap: clamp(18px, 3vw, 38px);
+      color: rgba(245, 249, 255, 0.78);
+      font-size: 13px;
+      letter-spacing: 0.12em;
+    }
+
+    .nav-links a {
+      position: relative;
+      padding: 8px 0;
+    }
+
+    .nav-links a::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      height: 1px;
+      transform: scaleX(0);
+      transform-origin: right;
+      background: linear-gradient(90deg, var(--orange), var(--cyan));
+      transition: transform 280ms var(--ease);
+    }
+
+    .nav-links a:hover::after,
+    .nav-links a:focus-visible::after {
+      transform: scaleX(1);
+      transform-origin: left;
+    }
+
+    .audio-control,
+    .intro-skip,
+    .intro-enter,
+    .ghost-action {
+      border: 1px solid rgba(158, 232, 255, 0.28);
+      color: var(--ink);
+      background: rgba(4, 10, 18, 0.54);
+      border-radius: 999px;
+      cursor: pointer;
+      transition: transform 220ms var(--ease), border-color 220ms var(--ease), background 220ms var(--ease);
+    }
+
+    .audio-control {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      height: 42px;
+      padding: 0 14px;
+      white-space: nowrap;
+      font-size: 12px;
+      letter-spacing: 0.08em;
+    }
+
+    .audio-control:hover,
+    .audio-control:focus-visible,
+    .intro-skip:hover,
+    .intro-skip:focus-visible,
+    .intro-enter:hover,
+    .intro-enter:focus-visible,
+    .ghost-action:hover,
+    .ghost-action:focus-visible {
+      transform: translateY(-1px);
+      border-color: rgba(255, 123, 35, 0.58);
+      background: rgba(12, 25, 40, 0.78);
+      outline: none;
+    }
+
+    .audio-bars {
+      display: inline-flex;
+      align-items: flex-end;
+      gap: 3px;
+      height: 16px;
+    }
+
+    .audio-bars i {
+      display: block;
+      width: 3px;
+      height: 8px;
+      border-radius: 999px;
+      background: var(--cyan);
+      opacity: 0.7;
+    }
+
+    body.music-playing .audio-bars i {
+      animation: audioPulse 820ms ease-in-out infinite;
+    }
+
+    body.music-playing .audio-bars i:nth-child(2) {
+      animation-delay: 120ms;
+    }
+
+    body.music-playing .audio-bars i:nth-child(3) {
+      animation-delay: 240ms;
+    }
+
+    .hero {
+      position: relative;
+      min-height: 100dvh;
+      overflow: hidden;
+      isolation: isolate;
+      display: grid;
+      align-items: end;
+      padding: 112px clamp(18px, 4vw, 64px) 64px;
+      border-bottom: 1px solid rgba(157, 205, 255, 0.12);
+    }
+
+    .hero::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      z-index: 0;
+      pointer-events: none;
+      opacity: 0;
+      background: rgba(2, 5, 10, 0.72);
+    }
+
+    .hero-media {
+      position: absolute;
+      inset: 0;
+      z-index: -3;
+      overflow: hidden;
+      background: #020407;
+    }
+
+    .hero-media::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      z-index: 4;
+      background:
+        linear-gradient(90deg, rgba(2, 5, 10, 0.92) 0%, rgba(2, 5, 10, 0.48) 42%, rgba(2, 5, 10, 0.82) 100%),
+        linear-gradient(180deg, rgba(2, 5, 10, 0.26), rgba(2, 5, 10, 0.82) 72%, #05070b 100%);
+    }
+
+    .hero-shot {
+      position: absolute;
+      overflow: hidden;
+      border: 1px solid rgba(158, 232, 255, 0.1);
+      background: #06101c;
+      box-shadow: 0 24px 80px rgba(0, 0, 0, 0.42);
+      transform: translateZ(0);
+    }
+
+    .hero-shot img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      filter: saturate(0.82) contrast(1.08) brightness(0.72);
+      transform: scale(1.06);
+    }
+
+    .hero-shot.race {
+      left: -8vw;
+      top: 8vh;
+      width: 72vw;
+      height: 52vh;
+      clip-path: polygon(0 10%, 92% 0, 100% 84%, 12% 100%);
+      animation: heroDrift 14s var(--ease) infinite alternate;
+    }
+
+    .hero-shot.sea {
+      right: -10vw;
+      bottom: 0;
+      width: 72vw;
+      height: 48vh;
+      clip-path: polygon(12% 0, 100% 8%, 88% 100%, 0 86%);
+      animation: heroDrift 16s var(--ease) 600ms infinite alternate-reverse;
+    }
+
+    .hero-shot.air {
+      right: 7vw;
+      top: 16vh;
+      width: 38vw;
+      height: 26vh;
+      clip-path: polygon(8% 0, 100% 12%, 92% 100%, 0 82%);
+      opacity: 0.92;
+      animation: airFloat 9s var(--ease) infinite alternate;
+    }
+
+    .hero-canvas {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      z-index: -1;
+      pointer-events: none;
+      opacity: 0.86;
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      width: min(1240px, 100%);
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: minmax(0, 1.08fr) minmax(260px, 0.58fr);
+      align-items: end;
+      gap: clamp(28px, 5vw, 72px);
+    }
+
+    .hero-copy {
+      max-width: 780px;
+      padding-bottom: clamp(8px, 4vh, 42px);
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      margin: 0 0 20px;
+      color: var(--cyan);
+      font-family: var(--mono);
+      font-size: 12px;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+    }
+
+    .eyebrow::before {
+      content: "";
+      width: 38px;
+      height: 2px;
+      background: linear-gradient(90deg, var(--orange), var(--cyan));
+      box-shadow: 0 0 18px rgba(255, 123, 35, 0.5);
+    }
+
+    .hero h1 {
+      margin: 0;
+      font-size: clamp(54px, 9.2vw, 132px);
+      line-height: 0.92;
+      letter-spacing: 0;
+      font-weight: 900;
+      text-shadow: 0 24px 70px rgba(0, 0, 0, 0.62);
+    }
+
+    .hero-lead {
+      margin: 24px 0 0;
+      width: min(680px, 100%);
+      color: rgba(243, 248, 255, 0.78);
+      font-size: clamp(16px, 2.1vw, 22px);
+      line-height: 1.8;
+      font-weight: 400;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      margin-top: 34px;
+    }
+
+    .primary-action,
+    .ghost-action {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 46px;
+      padding: 0 22px;
+      font-size: 13px;
+      letter-spacing: 0.12em;
+    }
+
+    .primary-action {
+      border: 0;
+      border-radius: 999px;
+      color: #04101d;
+      background: linear-gradient(90deg, #ffffff, #aeefff 52%, #ffb36b);
+      box-shadow: 0 12px 38px rgba(43, 141, 255, 0.22);
+      cursor: pointer;
+      transition: transform 220ms var(--ease), filter 220ms var(--ease);
+    }
+
+    .primary-action:hover,
+    .primary-action:focus-visible {
+      transform: translateY(-1px);
+      filter: brightness(1.06);
+      outline: none;
+    }
+
+    .hero-stat-stack {
+      display: grid;
+      gap: 12px;
+      justify-self: end;
+      width: min(360px, 100%);
+      margin-bottom: clamp(0px, 4vh, 42px);
+    }
+
+    .stat-line {
+      position: relative;
+      padding: 18px 18px 16px;
+      border-top: 1px solid rgba(158, 232, 255, 0.24);
+      background: linear-gradient(90deg, rgba(6, 14, 24, 0.78), rgba(6, 14, 24, 0.2));
+      overflow: hidden;
+    }
+
+    .stat-line::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 0;
+      bottom: 0;
+      width: 3px;
+      background: linear-gradient(180deg, var(--cyan), var(--orange));
+    }
+
+    .stat-line strong {
+      display: block;
+      font-family: var(--mono);
+      font-size: clamp(30px, 5vw, 54px);
+      line-height: 1;
+      color: #fff;
+    }
+
+    .stat-line span {
+      display: block;
+      margin-top: 6px;
+      color: rgba(232, 240, 255, 0.68);
+      font-size: 13px;
+      letter-spacing: 0.08em;
+    }
+
+    .content-band {
+      position: relative;
+      z-index: 1;
+      padding: clamp(78px, 10vw, 126px) clamp(18px, 4vw, 64px);
+      border-bottom: 1px solid rgba(157, 205, 255, 0.1);
+    }
+
+    .band-inner {
+      width: min(1240px, 100%);
+      margin: 0 auto;
+    }
+
+    .section-head {
+      display: grid;
+      grid-template-columns: minmax(0, 0.88fr) minmax(260px, 0.52fr);
+      gap: clamp(24px, 5vw, 72px);
+      align-items: end;
+      margin-bottom: clamp(34px, 5vw, 64px);
+    }
+
+    .section-head h2 {
+      margin: 0;
+      font-size: clamp(36px, 6.5vw, 86px);
+      line-height: 1.02;
+      letter-spacing: 0;
+    }
+
+    .section-head p {
+      margin: 0;
+      color: var(--muted);
+      line-height: 1.9;
+      font-size: 16px;
+    }
+
+    .honor-grid {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      border-top: 1px solid rgba(158, 232, 255, 0.2);
+      border-bottom: 1px solid rgba(158, 232, 255, 0.2);
+    }
+
+    .honor-item {
+      min-height: 230px;
+      padding: clamp(24px, 3.2vw, 42px);
+      border-right: 1px solid rgba(158, 232, 255, 0.14);
+      background: linear-gradient(180deg, rgba(8, 17, 30, 0.5), rgba(8, 17, 30, 0.12));
+    }
+
+    .honor-item:last-child {
+      border-right: 0;
+    }
+
+    .honor-item b {
+      display: block;
+      color: var(--cyan);
+      font-family: var(--mono);
+      font-size: 12px;
+      letter-spacing: 0.2em;
+      font-weight: 500;
+    }
+
+    .honor-item strong {
+      display: block;
+      margin-top: 24px;
+      font-family: var(--mono);
+      font-size: clamp(42px, 6vw, 76px);
+      line-height: 0.9;
+      letter-spacing: -0.04em;
+    }
+
+    .honor-item span {
+      display: block;
+      margin-top: 16px;
+      color: var(--muted);
+      line-height: 1.7;
+    }
+
+    .timeline {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 1px;
+      margin-top: 28px;
+      background: rgba(158, 232, 255, 0.14);
+    }
+
+    .timeline-item {
+      padding: 24px;
+      background: #07101b;
+    }
+
+    .timeline-item time {
+      color: var(--orange);
+      font-family: var(--mono);
+      font-size: 13px;
+    }
+
+    .timeline-item strong {
+      display: block;
+      margin-top: 10px;
+      font-size: 30px;
+    }
+
+    .system-layout {
+      display: grid;
+      grid-template-columns: minmax(260px, 0.55fr) minmax(0, 1fr);
+      gap: clamp(28px, 5vw, 72px);
+      align-items: center;
+    }
+
+    .badge-stage {
+      position: relative;
+      min-height: 420px;
+      display: grid;
+      place-items: center;
+      overflow: hidden;
+      background:
+        radial-gradient(circle at 50% 48%, rgba(43, 141, 255, 0.26), transparent 34%),
+        linear-gradient(180deg, rgba(9, 20, 34, 0.72), rgba(4, 8, 14, 0.2));
+      border: 1px solid rgba(158, 232, 255, 0.18);
+      box-shadow: var(--shadow);
+    }
+
+    .badge-stage::before,
+    .badge-stage::after {
+      content: "";
+      position: absolute;
+      inset: 38px;
+      border: 1px solid rgba(158, 232, 255, 0.16);
+      border-radius: 999px;
+      animation: orbit 16s linear infinite;
+    }
+
+    .badge-stage::after {
+      inset: 72px;
+      border-color: rgba(255, 123, 35, 0.18);
+      animation-duration: 22s;
+      animation-direction: reverse;
+    }
+
+    .badge-stage img {
+      position: relative;
+      z-index: 2;
+      width: min(500px, 92%);
+      border-radius: 0;
+      background: transparent;
+      filter:
+        brightness(1.18)
+        saturate(1.08)
+        contrast(1.03)
+        drop-shadow(0 0 1px rgba(255, 255, 255, 0.62))
+        drop-shadow(0 22px 55px rgba(0, 0, 0, 0.5))
+        drop-shadow(0 0 30px rgba(43, 141, 255, 0.2));
+    }
+
+    .system-copy {
+      display: grid;
+      gap: 22px;
+    }
+
+    .system-line {
+      padding: 24px 0;
+      border-top: 1px solid rgba(158, 232, 255, 0.16);
+    }
+
+    .system-line strong {
+      display: block;
+      font-size: clamp(24px, 3vw, 36px);
+      margin-bottom: 10px;
+    }
+
+    .system-line p {
+      margin: 0;
+      color: var(--muted);
+      line-height: 1.85;
+    }
+
+    .gallery-section {
+      overflow: hidden;
+      background:
+        linear-gradient(180deg, rgba(4, 9, 15, 0.2), rgba(4, 9, 15, 0.72)),
+        radial-gradient(circle at 80% 28%, rgba(255, 123, 35, 0.11), transparent 28rem);
+    }
+
+    .gallery-stage {
+      position: relative;
+      display: grid;
+      gap: 18px;
+      padding: 10px 0 26px;
+      mask-image: linear-gradient(90deg, transparent, #000 9%, #000 91%, transparent);
+    }
+
+    .gallery-track {
+      display: flex;
+      gap: 18px;
+      width: max-content;
+      animation: galleryFlow 48s linear infinite;
+    }
+
+    .gallery-track.reverse {
+      animation-name: galleryReverse;
+      animation-duration: 58s;
+    }
+
+    .gallery-stage:hover .gallery-track {
+      animation-play-state: paused;
+    }
+
+    .gallery-item {
+      position: relative;
+      width: clamp(230px, 24vw, 360px);
+      aspect-ratio: 1.36;
+      overflow: hidden;
+      border: 1px solid rgba(158, 232, 255, 0.16);
+      background: #08111d;
+    }
+
+    .gallery-item.wide {
+      width: clamp(330px, 35vw, 520px);
+    }
+
+    .gallery-item::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      z-index: 1;
+      background:
+        linear-gradient(180deg, transparent 52%, rgba(0, 0, 0, 0.78)),
+        linear-gradient(90deg, rgba(43, 141, 255, 0.18), transparent 40%);
+      opacity: 0.86;
+      pointer-events: none;
+    }
+
+    .gallery-item img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      filter: saturate(0.8) contrast(1.08);
+      transition: transform 650ms var(--ease), filter 650ms var(--ease);
+    }
+
+    .gallery-item:hover img {
+      transform: scale(1.06);
+      filter: saturate(1) contrast(1.08);
+    }
+
+    .gallery-item figcaption {
+      position: absolute;
+      z-index: 2;
+      left: 16px;
+      right: 16px;
+      bottom: 14px;
+      color: rgba(255, 255, 255, 0.92);
+      font-size: 14px;
+      line-height: 1.5;
+    }
+
+    .closing {
+      min-height: 54dvh;
+      display: grid;
+      align-items: center;
+      background:
+        linear-gradient(90deg, rgba(2, 5, 10, 0.92), rgba(2, 5, 10, 0.52)),
+        url("assets/v3/race-authorized-hero.jpg") center / cover;
+    }
+
+    .closing h2 {
+      margin: 0;
+      font-size: clamp(42px, 7vw, 92px);
+      line-height: 1;
+      width: min(800px, 100%);
+    }
+
+    .closing p {
+      margin: 22px 0 0;
+      color: rgba(244, 248, 255, 0.78);
+      width: min(640px, 100%);
+      line-height: 1.9;
+    }
+
+    .site-footer {
+      position: relative;
+      z-index: 1;
+      padding: 28px clamp(18px, 4vw, 64px) 42px;
+      color: rgba(232, 240, 255, 0.5);
+      font-size: 12px;
+      line-height: 1.8;
+      border-top: 1px solid rgba(157, 205, 255, 0.1);
+      background: #03060a;
+    }
+
+    .site-footer .band-inner {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 14px 28px;
+    }
+
+    .site-footer a {
+      color: rgba(158, 232, 255, 0.72);
+      text-decoration: underline;
+      text-underline-offset: 3px;
+    }
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(28px);
+      transition: opacity 720ms var(--ease), transform 720ms var(--ease);
+    }
+
+    .reveal.is-visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .intro {
+      position: fixed;
+      inset: 0;
+      z-index: 80;
+      overflow: hidden;
+      background: #010307;
+      color: var(--ink);
+      opacity: 1;
+      visibility: visible;
+      transition: opacity 700ms var(--ease), visibility 700ms var(--ease);
+    }
+
+    body.intro-complete .intro {
+      opacity: 0;
+      visibility: hidden;
+      pointer-events: none;
+    }
+
+    .intro-canvas {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 5;
+      pointer-events: none;
+    }
+
+    .intro-media {
+      position: absolute;
+      inset: 0;
+      z-index: 1;
+      opacity: 0;
+      transform: scale(1.16);
+      background-position: center;
+      background-size: cover;
+      filter: saturate(0.86) contrast(1.1) brightness(0.72);
+    }
+
+    .intro-media::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background:
+        linear-gradient(90deg, rgba(1, 3, 7, 0.9), rgba(1, 3, 7, 0.22), rgba(1, 3, 7, 0.82)),
+        linear-gradient(180deg, rgba(1, 3, 7, 0.28), rgba(1, 3, 7, 0.84));
+    }
+
+    .intro-media.race {
+      background-image: url("assets/v3/race-authorized-hero.jpg");
+      animation: introRace 10.8s var(--ease) both;
+    }
+
+    .intro-media.sea {
+      background-image: url("assets/v3/carrier-authorized-hero.jpg");
+      animation: introSea 10.8s var(--ease) both;
+    }
+
+    .intro-media.air {
+      background-image: url("assets/v3/aircraft-j10-hero.jpg");
+      animation: introAir 10.8s var(--ease) both;
+    }
+
+    .intro::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      z-index: 3;
+      background:
+        radial-gradient(circle at 50% 50%, transparent 0 26%, rgba(1, 3, 7, 0.34) 46%, #010307 100%),
+        linear-gradient(180deg, rgba(1, 3, 7, 0.42), rgba(1, 3, 7, 0.72));
+      pointer-events: none;
+    }
+
+    .intro::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      z-index: 7;
+      pointer-events: none;
+      opacity: 0.24;
+      background-image:
+        linear-gradient(rgba(158, 232, 255, 0.08) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(158, 232, 255, 0.06) 1px, transparent 1px);
+      background-size: 42px 42px;
+      animation: gridDrift 8s linear infinite;
+      mask-image: radial-gradient(circle, #000 0 56%, transparent 76%);
+    }
+
+    .intro-skip {
+      position: absolute;
+      top: 24px;
+      right: 26px;
+      z-index: 12;
+      min-height: 40px;
+      padding: 0 16px;
+      font-size: 12px;
+      letter-spacing: 0.12em;
+    }
+
+    .intro-center {
+      position: relative;
+      z-index: 10;
+      min-height: 100dvh;
+      display: grid;
+      place-items: center;
+      padding: 72px 20px;
+      text-align: center;
+    }
+
+    .intro-lockup {
+      display: grid;
+      justify-items: center;
+      gap: 18px;
+      opacity: 0;
+      transform: translateY(18px) scale(0.98);
+      animation: introLogoReveal 10.8s var(--ease) both;
+    }
+
+    .intro-logo-shell {
+      position: relative;
+      width: min(720px, 82vw);
+      aspect-ratio: 1.18;
+      display: grid;
+      place-items: center;
+    }
+
+    .intro-logo-shell::before,
+    .intro-logo-shell::after {
+      content: "";
+      position: absolute;
+      border-radius: 999px;
+      border: 1px solid rgba(158, 232, 255, 0.22);
+      box-shadow: inset 0 0 28px rgba(43, 141, 255, 0.08), 0 0 34px rgba(43, 141, 255, 0.15);
+    }
+
+    .intro-logo-shell::before {
+      inset: 12%;
+      animation: ringSweep 7s linear infinite;
+    }
+
+    .intro-logo-shell::after {
+      inset: 22%;
+      border-color: rgba(255, 123, 35, 0.22);
+      animation: ringSweep 10s linear infinite reverse;
+    }
+
+    .intro-main-logo {
+      position: relative;
+      z-index: 2;
+      width: min(620px, 78vw);
+      display: block;
+      filter:
+        saturate(1.08)
+        contrast(1.08)
+        drop-shadow(0 24px 44px rgba(0, 0, 0, 0.58))
+        drop-shadow(0 0 18px rgba(43, 141, 255, 0.18));
+    }
+
+    .intro-logo-plate {
+      position: absolute;
+      z-index: 1;
+      left: 50%;
+      top: 70%;
+      width: min(530px, 67vw);
+      height: clamp(112px, 15vw, 164px);
+      transform: translate(-50%, -50%) skewX(-6deg);
+      border-radius: 18px;
+      background:
+        linear-gradient(115deg, rgba(255, 255, 255, 0.92), rgba(245, 250, 255, 0.98) 45%, rgba(255, 255, 255, 0.9)),
+        radial-gradient(circle at 18% 50%, rgba(43, 141, 255, 0.12), transparent 55%);
+      box-shadow:
+        0 20px 48px rgba(0, 0, 0, 0.38),
+        0 0 0 1px rgba(158, 232, 255, 0.16),
+        inset 0 1px 0 rgba(255, 255, 255, 0.9);
+      opacity: 0.96;
+      pointer-events: none;
+    }
+
+    .intro-title {
+      min-height: 1.2em;
+      margin: 0;
+      font-size: clamp(42px, 8vw, 94px);
+      line-height: 1;
+      font-weight: 900;
+      letter-spacing: 0;
+      text-shadow: 0 18px 48px rgba(0, 0, 0, 0.7);
+    }
+
+    .intro-subtitle {
+      margin: 0;
+      color: rgba(232, 240, 255, 0.72);
+      font-family: var(--mono);
+      font-size: clamp(12px, 1.6vw, 16px);
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+    }
+
+    .intro-data {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 10px;
+      margin-top: 12px;
+      opacity: 0;
+      animation: introDataReveal 10.8s var(--ease) both;
+    }
+
+    .intro-data span {
+      border: 1px solid rgba(158, 232, 255, 0.22);
+      background: rgba(4, 10, 18, 0.5);
+      padding: 8px 12px;
+      color: rgba(245, 249, 255, 0.8);
+      font-family: var(--mono);
+      font-size: 12px;
+      letter-spacing: 0.08em;
+    }
+
+    .intro-enter {
+      min-height: 44px;
+      padding: 0 20px;
+      margin-top: 10px;
+      opacity: 0;
+      transform: translateY(10px);
+      animation: introEnterReveal 10.8s var(--ease) both;
+    }
+
+    .intro-progress {
+      position: absolute;
+      left: 22px;
+      right: 22px;
+      bottom: 22px;
+      z-index: 12;
+      height: 2px;
+      background: rgba(158, 232, 255, 0.14);
+      overflow: hidden;
+    }
+
+    .intro-progress::before {
+      content: "";
+      display: block;
+      height: 100%;
+      width: 100%;
+      transform-origin: left;
+      background: linear-gradient(90deg, var(--blue), var(--cyan), var(--orange));
+      animation: progressFill 10.8s linear both;
+    }
+
+    @keyframes audioPulse {
+      0%, 100% { height: 6px; opacity: 0.48; }
+      50% { height: 16px; opacity: 1; }
+    }
+
+    @keyframes heroDrift {
+      from { transform: translate3d(0, 0, 0) scale(1); }
+      to { transform: translate3d(18px, -12px, 0) scale(1.03); }
+    }
+
+    @keyframes airFloat {
+      from { transform: translate3d(0, 0, 0) rotate(-1deg); }
+      to { transform: translate3d(-28px, 14px, 0) rotate(1deg); }
+    }
+
+    @keyframes orbit {
+      from { transform: rotate(0deg) scale(1); }
+      to { transform: rotate(360deg) scale(1.04); }
+    }
+
+    @keyframes galleryFlow {
+      from { transform: translateX(0); }
+      to { transform: translateX(-50%); }
+    }
+
+    @keyframes galleryReverse {
+      from { transform: translateX(-50%); }
+      to { transform: translateX(0); }
+    }
+
+    @keyframes gridDrift {
+      from { transform: translate3d(0, 0, 0); }
+      to { transform: translate3d(-42px, 42px, 0); }
+    }
+
+    @keyframes introRace {
+      0% { opacity: 0; transform: scale(1.2) translateX(2%); filter: brightness(0.2) blur(2px); }
+      6% { opacity: 0; }
+      12% { opacity: 1; transform: scale(1.12) translateX(0); filter: brightness(0.62) blur(0); }
+      32% { opacity: 0.95; transform: scale(1.03) translateX(-2%); }
+      42%, 100% { opacity: 0; transform: scale(1) translateX(-3%); }
+    }
+
+    @keyframes introSea {
+      0%, 30% { opacity: 0; transform: scale(1.16) translateY(3%); }
+      39% { opacity: 1; transform: scale(1.08) translateY(0); }
+      57% { opacity: 0.96; transform: scale(1.02) translateY(-1%); }
+      67%, 100% { opacity: 0; transform: scale(1) translateY(-2%); }
+    }
+
+    @keyframes introAir {
+      0%, 54% { opacity: 0; transform: scale(1.18) translateX(7%); }
+      62% { opacity: 1; transform: scale(1.08) translateX(0); }
+      76% { opacity: 0.95; transform: scale(1.02) translateX(-2%); }
+      86%, 100% { opacity: 0; transform: scale(1) translateX(-4%); }
+    }
+
+    @keyframes introLogoReveal {
+      0%, 70% { opacity: 0; transform: translateY(18px) scale(0.94); filter: blur(8px); }
+      79% { opacity: 1; transform: translateY(0) scale(1); filter: blur(0); }
+      100% { opacity: 1; transform: translateY(0) scale(1); filter: blur(0); }
+    }
+
+    @keyframes introDataReveal {
+      0%, 83% { opacity: 0; transform: translateY(12px); }
+      90%, 100% { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes introEnterReveal {
+      0%, 88% { opacity: 0; transform: translateY(10px); }
+      94%, 100% { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes ringSweep {
+      from { transform: rotate(0deg); }
+      to { transform: rotate(360deg); }
+    }
+
+    @keyframes progressFill {
+      from { transform: scaleX(0); }
+      to { transform: scaleX(1); }
+    }
+
+    @media (max-width: 980px) {
+      .site-nav {
+        grid-template-columns: 1fr auto;
+        height: 68px;
+      }
+
+      .nav-links {
+        display: none;
+      }
+
+      .hero {
+        padding-top: 96px;
+      }
+
+      .hero-content,
+      .section-head,
+      .system-layout {
+        grid-template-columns: 1fr;
+      }
+
+      .hero-stat-stack {
+        justify-self: start;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        width: 100%;
+      }
+
+      .honor-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .honor-item:nth-child(2) {
+        border-right: 0;
+      }
+
+      .timeline {
+        grid-template-columns: 1fr;
+      }
+
+      .hero-shot.race {
+        left: -24vw;
+        top: 8vh;
+        width: 100vw;
+      }
+
+      .hero-shot.sea {
+        width: 104vw;
+        right: -36vw;
+      }
+
+      .hero-shot.air {
+        width: 62vw;
+        right: -10vw;
+      }
+    }
+
+    @media (max-width: 620px) {
+      .site-nav {
+        padding: 10px 14px;
+        background: linear-gradient(180deg, rgba(2, 5, 10, 0.96), rgba(2, 5, 10, 0.82));
+      }
+
+      .brand img {
+        width: min(214px, 56vw);
+      }
+
+      .audio-label {
+        display: none;
+      }
+
+      .hero {
+        min-height: 96dvh;
+        padding-left: 16px;
+        padding-right: 16px;
+        padding-bottom: 36px;
+      }
+
+      .hero::before {
+        opacity: 1;
+        background:
+          radial-gradient(circle at 24% 12%, rgba(43, 141, 255, 0.12), transparent 26rem),
+          rgba(2, 5, 10, 0.88);
+      }
+
+      .hero-media::after {
+        background:
+          linear-gradient(90deg, rgba(2, 5, 10, 0.94), rgba(2, 5, 10, 0.68) 48%, rgba(2, 5, 10, 0.94)),
+          linear-gradient(180deg, rgba(2, 5, 10, 0.72), rgba(2, 5, 10, 0.9) 58%, #05070b 100%);
+      }
+
+      .hero-shot img {
+        filter: saturate(0.72) contrast(1.08) brightness(0.44);
+      }
+
+      .hero-shot.air {
+        opacity: 0.3;
+        right: -22vw;
+        top: 14vh;
+      }
+
+      .hero h1 {
+        font-size: clamp(48px, 18vw, 76px);
+      }
+
+      .hero-lead {
+        font-size: 15px;
+      }
+
+      .hero-stat-stack {
+        grid-template-columns: 1fr;
+      }
+
+      .stat-line {
+        padding: 14px 16px;
+        background: linear-gradient(90deg, rgba(5, 10, 18, 0.94), rgba(5, 10, 18, 0.68));
+      }
+
+      .content-band {
+        padding-left: 16px;
+        padding-right: 16px;
+      }
+
+      .honor-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .honor-item {
+        min-height: 190px;
+        border-right: 0;
+        border-bottom: 1px solid rgba(158, 232, 255, 0.14);
+      }
+
+      .honor-item:last-child {
+        border-bottom: 0;
+      }
+
+      .badge-stage {
+        min-height: 320px;
+      }
+
+      .gallery-stage {
+        mask-image: none;
+      }
+
+      .intro-logo-shell {
+        width: 96vw;
+      }
+
+      .intro-logo-plate {
+        top: 70%;
+        width: 74vw;
+        height: clamp(82px, 24vw, 124px);
+        border-radius: 14px;
+      }
+
+      .intro-title {
+        font-size: clamp(38px, 14vw, 68px);
+      }
+
+      .intro-subtitle {
+        font-size: 11px;
+        line-height: 1.8;
+      }
+
+      .intro-data {
+        gap: 8px;
+      }
+
+      .intro-data span {
+        font-size: 11px;
+        padding: 7px 9px;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *,
+      *::before,
+      *::after {
+        animation-duration: 1ms !important;
+        animation-iteration-count: 1 !important;
+        scroll-behavior: auto !important;
+        transition-duration: 1ms !important;
+      }
+
+      .intro {
+        display: none;
+      }
+
+      .reveal {
+        opacity: 1;
+        transform: none;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="site-shell">
+    <header class="site-nav" aria-label="主导航">
+      <a class="brand" href="#top" aria-label="擎风模型队首页">
+        <img src="assets/v3/logo-qingfeng-nav.png" alt="擎风模型队">
+      </a>
+      <nav class="nav-links" aria-label="页面导航">
+        <a href="#honor">成果</a>
+        <a href="#system">体系</a>
+        <a href="#gallery">影像</a>
+        <a href="#future">未来</a>
+      </nav>
+      <button class="audio-control" type="button" id="musicToggle" aria-pressed="true" aria-label="关闭背景音乐">
+        <span class="audio-bars" aria-hidden="true"><i></i><i></i><i></i></span>
+        <span class="audio-label" id="musicLabel">关闭 BGM</span>
+      </button>
+    </header>
+
+    <main>
+      <section class="hero" id="top" aria-labelledby="heroTitle">
+        <div class="hero-media" aria-hidden="true">
+          <figure class="hero-shot race"><img src="assets/v3/race-authorized-hero.jpg" alt=""></figure>
+          <figure class="hero-shot sea"><img src="assets/v3/carrier-authorized-hero.jpg" alt=""></figure>
+          <figure class="hero-shot air"><img src="assets/v3/aircraft-j10-hero.jpg" alt=""></figure>
+        </div>
+        <canvas class="hero-canvas" id="heroCanvas" aria-hidden="true"></canvas>
+
+        <div class="hero-content">
+          <div class="hero-copy reveal">
+            <p class="eyebrow">ZJNU HANGZHOU JIANWEN EXPERIMENTAL SCHOOL</p>
+            <h1 id="heroTitle">擎风<br>模型队</h1>
+            <p class="hero-lead">以车模、海模、航模为核心方向，用模型制作、调试与竞赛实践连接科学素养、工程思维和团队精神。</p>
+            <div class="hero-actions">
+              <a class="primary-action" href="#honor">查看校队成果</a>
+              <button class="ghost-action" type="button" id="replayIntro">重播开场</button>
+            </div>
+          </div>
+
+          <div class="hero-stat-stack reveal" aria-label="核心成绩数据">
+            <div class="stat-line"><strong>50+</strong><span>国家级奖项</span></div>
+            <div class="stat-line"><strong>100+</strong><span>省级奖项</span></div>
+            <div class="stat-line"><strong>2</strong><span>全国冠军</span></div>
+          </div>
+        </div>
+      </section>
+
+      <section class="content-band honor-section" id="honor" aria-labelledby="honorTitle">
+        <div class="band-inner">
+          <div class="section-head reveal">
+            <div>
+              <p class="eyebrow">HONOR SYSTEM</p>
+              <h2 id="honorTitle">从城区突破，到全国舞台。</h2>
+            </div>
+            <p>擎风模型队以持续训练、精细调试和赛场复盘积累竞争力。成绩不只是一张奖状，也是一套稳定成长的校队体系。</p>
+          </div>
+
+          <div class="honor-grid reveal">
+            <div class="honor-item"><b>NATIONAL</b><strong>50+</strong><span>国家级奖项累计突破 50 项。</span></div>
+            <div class="honor-item"><b>PROVINCIAL</b><strong>100+</strong><span>省级奖项累计突破 100 项。</span></div>
+            <div class="honor-item"><b>CHAMPIONS</b><strong>2</strong><span>已培养两位全国冠军，其中一位为全国锦标赛冠军。</span></div>
+            <div class="honor-item"><b>DIRECTION</b><strong>3</strong><span>车模、海模、航模三方向协同发展。</span></div>
+          </div>
+
+          <div class="timeline reveal" aria-label="区级发展历程">
+            <div class="timeline-item"><time>2023</time><strong>上城区第 15</strong></div>
+            <div class="timeline-item"><time>2024</time><strong>上城区第 8</strong></div>
+            <div class="timeline-item"><time>2025</time><strong>上城区第 1</strong></div>
+          </div>
+        </div>
+      </section>
+
+      <section class="content-band system-section" id="system" aria-labelledby="systemTitle">
+        <div class="band-inner system-layout">
+          <div class="badge-stage reveal" aria-hidden="true">
+            <img src="assets/v3/logo-qingfeng-badge.png" alt="">
+          </div>
+          <div class="system-copy">
+            <div class="section-head reveal" style="display:block;margin-bottom:8px;">
+              <p class="eyebrow">TEAM ARCHITECTURE</p>
+              <h2 id="systemTitle">把热爱，训练成能力。</h2>
+            </div>
+            <div class="system-line reveal">
+              <strong>车模</strong>
+              <p>从车体结构、动力传递到赛道策略，训练学生对速度、稳定性和调试细节的敏感度。</p>
+            </div>
+            <div class="system-line reveal">
+              <strong>海模</strong>
+              <p>在水面环境中理解浮力、航向、阻力与控制，让模型制作从平面设计走向真实环境测试。</p>
+            </div>
+            <div class="system-line reveal">
+              <strong>航模</strong>
+              <p>用空气动力、结构轻量化和飞行姿态把科学知识变成可观察、可修正、可提升的实践过程。</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="content-band gallery-section" id="gallery" aria-labelledby="galleryTitle">
+        <div class="band-inner">
+          <div class="section-head reveal">
+            <div>
+              <p class="eyebrow">REAL FIELD</p>
+              <h2 id="galleryTitle">成长发生在真实现场。</h2>
+            </div>
+            <p>这些影像来自校队日常与赛事现场。3.0 版本先用动态滚动建立品牌气质，后续可以继续加入更完整的赛事故事线。</p>
+          </div>
+        </div>
+
+        <div class="gallery-stage reveal" aria-label="擎风模型队影像动态展示">
+          <div class="gallery-track">
+            <figure class="gallery-item wide"><img src="assets/gallery/campus-team.jpg" alt="校队校园合影"><figcaption>校园里的队伍合影</figcaption></figure>
+            <figure class="gallery-item"><img src="assets/gallery/training-workshop.jpg" alt="学生进行模型制作"><figcaption>模型制作与调试</figcaption></figure>
+            <figure class="gallery-item"><img src="assets/gallery/race-track.jpg" alt="车辆模型赛道训练"><figcaption>车模赛道现场</figcaption></figure>
+            <figure class="gallery-item"><img src="assets/gallery/award-podium.jpg" alt="学生领奖"><figcaption>荣誉时刻</figcaption></figure>
+            <figure class="gallery-item wide"><img src="assets/gallery/event-team.jpg" alt="赛事背景板前合影"><figcaption>赛事现场集结</figcaption></figure>
+            <figure class="gallery-item"><img src="assets/gallery/pool-session.jpg" alt="海模训练"><figcaption>海模方向实践</figcaption></figure>
+            <figure class="gallery-item"><img src="assets/gallery/competition-court.jpg" alt="户外模型比赛"><figcaption>竞赛环境适应</figcaption></figure>
+            <figure class="gallery-item"><img src="assets/gallery/arena-banner.jpg" alt="学生参加模型竞赛活动"><figcaption>活动现场</figcaption></figure>
+            <figure class="gallery-item wide" aria-hidden="true"><img src="assets/gallery/campus-team.jpg" alt=""><figcaption>校园里的队伍合影</figcaption></figure>
+            <figure class="gallery-item" aria-hidden="true"><img src="assets/gallery/training-workshop.jpg" alt=""><figcaption>模型制作与调试</figcaption></figure>
+            <figure class="gallery-item" aria-hidden="true"><img src="assets/gallery/race-track.jpg" alt=""><figcaption>车模赛道现场</figcaption></figure>
+            <figure class="gallery-item" aria-hidden="true"><img src="assets/gallery/award-podium.jpg" alt=""><figcaption>荣誉时刻</figcaption></figure>
+          </div>
+
+          <div class="gallery-track reverse" aria-hidden="true">
+            <figure class="gallery-item"><img src="assets/gallery/competition-court.jpg" alt=""><figcaption>竞赛环境适应</figcaption></figure>
+            <figure class="gallery-item wide"><img src="assets/gallery/arena-banner.jpg" alt=""><figcaption>活动现场</figcaption></figure>
+            <figure class="gallery-item"><img src="assets/gallery/pool-session.jpg" alt=""><figcaption>海模方向实践</figcaption></figure>
+            <figure class="gallery-item wide"><img src="assets/gallery/event-team.jpg" alt=""><figcaption>赛事现场集结</figcaption></figure>
+            <figure class="gallery-item"><img src="assets/gallery/award-podium.jpg" alt=""><figcaption>荣誉时刻</figcaption></figure>
+            <figure class="gallery-item"><img src="assets/gallery/race-track.jpg" alt=""><figcaption>车模赛道现场</figcaption></figure>
+            <figure class="gallery-item"><img src="assets/gallery/training-workshop.jpg" alt=""><figcaption>模型制作与调试</figcaption></figure>
+            <figure class="gallery-item wide"><img src="assets/gallery/campus-team.jpg" alt=""><figcaption>校园里的队伍合影</figcaption></figure>
+            <figure class="gallery-item"><img src="assets/gallery/competition-court.jpg" alt=""><figcaption>竞赛环境适应</figcaption></figure>
+            <figure class="gallery-item wide"><img src="assets/gallery/arena-banner.jpg" alt=""><figcaption>活动现场</figcaption></figure>
+            <figure class="gallery-item"><img src="assets/gallery/pool-session.jpg" alt=""><figcaption>海模方向实践</figcaption></figure>
+            <figure class="gallery-item wide"><img src="assets/gallery/event-team.jpg" alt=""><figcaption>赛事现场集结</figcaption></figure>
+          </div>
+        </div>
+      </section>
+
+      <section class="content-band closing" id="future" aria-labelledby="futureTitle">
+        <div class="band-inner reveal">
+          <p class="eyebrow">NEXT SEASON</p>
+          <h2 id="futureTitle">让每一次调试，都成为下一次起飞。</h2>
+          <p>擎风模型队将继续以竞赛为牵引，以项目化学习为路径，推动学生在制作、协作、复盘和表达中形成真正可迁移的科技素养。</p>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="band-inner">
+        <span>浙江师范大学附属杭州笕文实验学校 · 擎风模型队</span>
+        <span>飞机图：Peng Chen, <a href="https://commons.wikimedia.org/wiki/File:China_airforce_J-10.jpg">China airforce J-10</a>, <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC BY-SA 2.0</a>。汽车、航母图由用户确认已获授权。</span>
+      </div>
+    </footer>
+  </div>
+
+  <section class="intro" aria-label="擎风模型队开场动画">
+    <button class="intro-skip" type="button" id="skipIntro">跳过导入</button>
+    <div class="intro-media race" aria-hidden="true"></div>
+    <div class="intro-media sea" aria-hidden="true"></div>
+    <div class="intro-media air" aria-hidden="true"></div>
+    <canvas class="intro-canvas" id="introCanvas" aria-hidden="true"></canvas>
+    <div class="intro-center">
+      <div class="intro-lockup">
+        <div class="intro-logo-shell" aria-hidden="true">
+          <span class="intro-logo-plate" aria-hidden="true"></span>
+          <img class="intro-main-logo" src="assets/v3/logo-qingfeng-main.png" alt="">
+        </div>
+        <p class="intro-title" id="introTitle" data-text="擎风模型队"></p>
+        <p class="intro-subtitle">车模 · 海模 · 航模 | SCHOOL MODEL TEAM</p>
+        <div class="intro-data" aria-label="核心成绩">
+          <span>国家级奖项 50+</span>
+          <span>省级奖项 100+</span>
+          <span>全国冠军 2 位</span>
+        </div>
+        <button class="intro-enter" type="button" id="enterSite">进入主页</button>
+      </div>
+    </div>
+    <div class="intro-progress" aria-hidden="true"></div>
+  </section>
+
+  <audio id="siteMusic" src="assets/audio/mixkit-autofahren-770.mp3" preload="auto" autoplay playsinline loop></audio>
+
+  <script>
+    (() => {
+      const body = document.body;
+      const intro = document.querySelector(".intro");
+      const skipIntro = document.querySelector("#skipIntro");
+      const enterSite = document.querySelector("#enterSite");
+      const replayIntro = document.querySelector("#replayIntro");
+      const introTitle = document.querySelector("#introTitle");
+      const music = document.querySelector("#siteMusic");
+      const musicToggle = document.querySelector("#musicToggle");
+      const musicLabel = document.querySelector("#musicLabel");
+      const revealItems = document.querySelectorAll(".reveal");
+      const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+      const introCanvas = document.querySelector("#introCanvas");
+      const heroCanvas = document.querySelector("#heroCanvas");
+      const introCtx = introCanvas.getContext("2d");
+      const heroCtx = heroCanvas.getContext("2d");
+
+      let introStart = performance.now();
+      let introFrame = 0;
+      let heroFrame = 0;
+      let typingTimers = [];
+      let introFinishTimer = 0;
+      let musicWanted = true;
+      let musicPlayAttempt = null;
+
+      function resizeCanvas(canvas, ctx) {
+        const ratio = Math.min(window.devicePixelRatio || 1, 2);
+        const rect = canvas.getBoundingClientRect();
+        const width = Math.max(1, Math.floor(rect.width * ratio));
+        const height = Math.max(1, Math.floor(rect.height * ratio));
+        if (canvas.width !== width || canvas.height !== height) {
+          canvas.width = width;
+          canvas.height = height;
+          ctx.setTransform(ratio, 0, 0, ratio, 0, 0);
+        }
+        return { width: rect.width, height: rect.height };
+      }
+
+      function clamp01(value) {
+        return Math.max(0, Math.min(1, value));
+      }
+
+      function smoothstep(start, end, value) {
+        const t = clamp01((value - start) / Math.max(0.0001, end - start));
+        return t * t * (3 - 2 * t);
+      }
+
+      function pointOnCurve(p0, p1, p2, p3, t) {
+        const m = 1 - t;
+        return {
+          x: m * m * m * p0.x + 3 * m * m * t * p1.x + 3 * m * t * t * p2.x + t * t * t * p3.x,
+          y: m * m * m * p0.y + 3 * m * m * t * p1.y + 3 * m * t * t * p2.y + t * t * t * p3.y
+        };
+      }
+
+      function drawTrail(ctx, size, elapsed, config) {
+        const show = smoothstep(config.start, config.start + 0.7, elapsed) * (1 - smoothstep(config.end - 0.8, config.end, elapsed));
+        if (show <= 0) return;
+
+        const tMax = smoothstep(config.start, config.end, elapsed);
+        const p0 = { x: size.width * config.points[0][0], y: size.height * config.points[0][1] };
+        const p1 = { x: size.width * config.points[1][0], y: size.height * config.points[1][1] };
+        const p2 = { x: size.width * config.points[2][0], y: size.height * config.points[2][1] };
+        const p3 = { x: size.width * config.points[3][0], y: size.height * config.points[3][1] };
+        const gradient = ctx.createLinearGradient(p0.x, p0.y, p3.x, p3.y);
+        gradient.addColorStop(0, `rgba(${config.rgb}, 0)`);
+        gradient.addColorStop(0.45, `rgba(${config.rgb}, ${0.26 * show})`);
+        gradient.addColorStop(1, `rgba(${config.rgb}, ${0.96 * show})`);
+
+        ctx.save();
+        ctx.lineCap = "round";
+        ctx.lineJoin = "round";
+        ctx.strokeStyle = gradient;
+        ctx.lineWidth = config.width;
+        ctx.shadowColor = `rgba(${config.rgb}, ${0.52 * show})`;
+        ctx.shadowBlur = 22;
+        ctx.beginPath();
+        const steps = 96;
+        for (let i = 0; i <= steps; i += 1) {
+          const t = tMax * (i / steps);
+          const point = pointOnCurve(p0, p1, p2, p3, t);
+          const wobble = Math.sin(i * 0.26 + elapsed * 4.2) * config.wobble * (1 - Math.abs(t - 0.5));
+          if (i === 0) ctx.moveTo(point.x, point.y + wobble);
+          else ctx.lineTo(point.x, point.y + wobble);
+        }
+        ctx.stroke();
+
+        const nose = pointOnCurve(p0, p1, p2, p3, tMax);
+        ctx.fillStyle = `rgba(255, 255, 255, ${0.86 * show})`;
+        ctx.shadowBlur = 30;
+        ctx.beginPath();
+        ctx.arc(nose.x, nose.y, config.width * 0.9, 0, Math.PI * 2);
+        ctx.fill();
+        ctx.restore();
+      }
+
+      function drawIntro(now) {
+        const size = resizeCanvas(introCanvas, introCtx);
+        const elapsed = (now - introStart) / 1000;
+        introCtx.clearRect(0, 0, size.width, size.height);
+
+        const centerPulse = smoothstep(6.6, 8.2, elapsed);
+        const radial = introCtx.createRadialGradient(size.width * 0.5, size.height * 0.5, 0, size.width * 0.5, size.height * 0.5, Math.min(size.width, size.height) * 0.56);
+        radial.addColorStop(0, `rgba(43, 141, 255, ${0.16 * centerPulse})`);
+        radial.addColorStop(0.42, `rgba(158, 232, 255, ${0.08 * centerPulse})`);
+        radial.addColorStop(1, "rgba(0, 0, 0, 0)");
+        introCtx.fillStyle = radial;
+        introCtx.fillRect(0, 0, size.width, size.height);
+
+        drawTrail(introCtx, size, elapsed, {
+          start: 0.8,
+          end: 3.7,
+          width: 3.2,
+          wobble: 10,
+          rgb: "255, 123, 35",
+          points: [[-0.08, 0.72], [0.28, 0.54], [0.42, 0.46], [0.54, 0.52]]
+        });
+        drawTrail(introCtx, size, elapsed, {
+          start: 3.3,
+          end: 6.2,
+          width: 3,
+          wobble: 14,
+          rgb: "43, 141, 255",
+          points: [[1.08, 0.72], [0.74, 0.62], [0.58, 0.55], [0.5, 0.52]]
+        });
+        drawTrail(introCtx, size, elapsed, {
+          start: 5.8,
+          end: 8.0,
+          width: 2.6,
+          wobble: 7,
+          rgb: "158, 232, 255",
+          points: [[0.94, 0.2], [0.74, 0.28], [0.62, 0.4], [0.51, 0.5]]
+        });
+
+        if (elapsed > 7.1) {
+          introCtx.save();
+          introCtx.translate(size.width * 0.5, size.height * 0.5);
+          const ringAlpha = smoothstep(7.1, 8.6, elapsed);
+          for (let i = 0; i < 4; i += 1) {
+            introCtx.strokeStyle = i % 2 ? `rgba(255, 123, 35, ${0.16 * ringAlpha})` : `rgba(158, 232, 255, ${0.2 * ringAlpha})`;
+            introCtx.lineWidth = 1;
+            introCtx.beginPath();
+            const radius = (90 + i * 58) * (1 + Math.sin(elapsed + i) * 0.015);
+            introCtx.ellipse(0, 0, radius * 1.65, radius * 0.46, (elapsed * 0.16) + i * 0.34, 0, Math.PI * 2);
+            introCtx.stroke();
+          }
+          introCtx.restore();
+        }
+
+        if (!body.classList.contains("intro-complete")) {
+          introFrame = requestAnimationFrame(drawIntro);
+        }
+      }
+
+      function drawHero(now) {
+        const size = resizeCanvas(heroCanvas, heroCtx);
+        const time = now / 1000;
+        heroCtx.clearRect(0, 0, size.width, size.height);
+        heroCtx.save();
+        heroCtx.globalCompositeOperation = "lighter";
+
+        for (let i = 0; i < 18; i += 1) {
+          const t = (time * 0.06 + i / 18) % 1;
+          const x = size.width * (0.12 + t * 0.82);
+          const y = size.height * (0.72 - Math.sin(t * Math.PI) * 0.3 + Math.sin(time + i) * 0.012);
+          const alpha = Math.sin(t * Math.PI) * 0.18;
+          heroCtx.strokeStyle = `rgba(158, 232, 255, ${alpha})`;
+          heroCtx.lineWidth = 1;
+          heroCtx.beginPath();
+          heroCtx.moveTo(x - 90, y + 30);
+          heroCtx.lineTo(x + 160, y - 18);
+          heroCtx.stroke();
+        }
+
+        const scanY = size.height * (0.2 + ((time * 0.055) % 0.68));
+        const scan = heroCtx.createLinearGradient(0, scanY - 16, 0, scanY + 16);
+        scan.addColorStop(0, "rgba(43, 141, 255, 0)");
+        scan.addColorStop(0.5, "rgba(158, 232, 255, 0.18)");
+        scan.addColorStop(1, "rgba(255, 123, 35, 0)");
+        heroCtx.fillStyle = scan;
+        heroCtx.fillRect(0, scanY - 18, size.width, 36);
+        heroCtx.restore();
+
+        heroFrame = requestAnimationFrame(drawHero);
+      }
+
+      function clearTyping() {
+        typingTimers.forEach((timer) => window.clearTimeout(timer));
+        typingTimers = [];
+      }
+
+      function startTyping() {
+        clearTyping();
+        const text = introTitle.dataset.text || "擎风模型队";
+        introTitle.textContent = "";
+        text.split("").forEach((char, index) => {
+          const timer = window.setTimeout(() => {
+            introTitle.textContent += char;
+          }, 7700 + index * 170);
+          typingTimers.push(timer);
+        });
+      }
+
+      function setMusicState(isPlaying) {
+        body.classList.toggle("music-playing", isPlaying);
+        musicToggle.setAttribute("aria-pressed", String(isPlaying));
+        musicToggle.setAttribute("aria-label", isPlaying ? "关闭背景音乐" : "开启背景音乐");
+        musicLabel.textContent = isPlaying ? "关闭 BGM" : "开启 BGM";
+      }
+
+      async function startMusic() {
+        if (!musicWanted) {
+          setMusicState(false);
+          return false;
+        }
+
+        if (!music.paused) {
+          setMusicState(true);
+          return true;
+        }
+
+        if (musicPlayAttempt) {
+          return musicPlayAttempt;
+        }
+
+        musicPlayAttempt = (async () => {
+          try {
+            music.autoplay = true;
+            music.defaultMuted = false;
+            music.muted = false;
+            music.volume = 0.42;
+            if (music.readyState === 0) music.load();
+            await music.play();
+            setMusicState(true);
+            return true;
+          } catch (error) {
+            setMusicState(false);
+            musicLabel.textContent = "点击开启 BGM";
+            return false;
+          } finally {
+            musicPlayAttempt = null;
+          }
+        })();
+
+        return musicPlayAttempt;
+      }
+
+      function requestAutoplayMusic() {
+        if (musicWanted && music.paused) {
+          window.setTimeout(startMusic, 0);
+        }
+      }
+
+      function toggleMusic() {
+        if (music.paused) {
+          musicWanted = true;
+          startMusic();
+        } else {
+          musicWanted = false;
+          music.pause();
+          setMusicState(false);
+        }
+      }
+
+      function finishIntro() {
+        body.classList.add("intro-complete");
+        window.clearTimeout(introFinishTimer);
+        window.cancelAnimationFrame(introFrame);
+        clearTyping();
+        startMusic();
+      }
+
+      function restartIntro() {
+        body.classList.remove("intro-complete");
+        introStart = performance.now();
+        introTitle.textContent = "";
+        window.clearTimeout(introFinishTimer);
+        window.cancelAnimationFrame(introFrame);
+        introFrame = requestAnimationFrame(drawIntro);
+        startTyping();
+        introFinishTimer = window.setTimeout(finishIntro, 11200);
+        window.scrollTo({ top: 0, behavior: "smooth" });
+        startMusic();
+      }
+
+      function setupReveal() {
+        const observer = new IntersectionObserver((entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add("is-visible");
+              observer.unobserve(entry.target);
+            }
+          });
+        }, { threshold: 0.16 });
+        revealItems.forEach((item) => observer.observe(item));
+      }
+
+      function boot() {
+        if (reducedMotion) {
+          finishIntro();
+          revealItems.forEach((item) => item.classList.add("is-visible"));
+          return;
+        }
+
+        setupReveal();
+        startTyping();
+        introFrame = requestAnimationFrame(drawIntro);
+        heroFrame = requestAnimationFrame(drawHero);
+        introFinishTimer = window.setTimeout(finishIntro, 11200);
+        requestAutoplayMusic();
+      }
+
+      window.addEventListener("resize", () => {
+        resizeCanvas(introCanvas, introCtx);
+        resizeCanvas(heroCanvas, heroCtx);
+      }, { passive: true });
+
+      skipIntro.addEventListener("click", finishIntro);
+      enterSite.addEventListener("click", finishIntro);
+      replayIntro.addEventListener("click", restartIntro);
+      musicToggle.addEventListener("click", toggleMusic);
+
+      document.addEventListener("DOMContentLoaded", requestAutoplayMusic, { once: true });
+      window.addEventListener("load", requestAutoplayMusic, { once: true });
+      window.addEventListener("pageshow", requestAutoplayMusic);
+      document.addEventListener("visibilitychange", () => {
+        if (!document.hidden) requestAutoplayMusic();
+      });
+
+      window.addEventListener("pointerdown", (event) => {
+        if (event.target.closest("#musicToggle")) return;
+        if (musicWanted && music.paused) startMusic();
+      }, { passive: true });
+
+      window.addEventListener("keydown", () => {
+        if (musicWanted && music.paused) startMusic();
+      });
+
+      window.addEventListener("beforeunload", () => {
+        window.cancelAnimationFrame(introFrame);
+        window.cancelAnimationFrame(heroFrame);
+        clearTyping();
+      });
+
+      boot();
+    })();
+  </script>
+</body>
+</html>
