@@ -485,6 +485,12 @@
       letter-spacing: 0;
     }
 
+    .gallery-section .section-head h2 {
+      font-size: clamp(34px, 5.2vw, 72px);
+      white-space: nowrap;
+      line-height: 1;
+    }
+
     .section-head p {
       margin: 0;
       color: var(--muted);
@@ -574,7 +580,7 @@
       place-items: center;
       overflow: hidden;
       background:
-        radial-gradient(circle at 50% 48%, rgba(43, 141, 255, 0.26), transparent 34%),
+        radial-gradient(circle at 50% 48%, rgba(232, 246, 255, 0.14), transparent 34%),
         linear-gradient(180deg, rgba(9, 20, 34, 0.72), rgba(4, 8, 14, 0.2));
       border: 1px solid rgba(158, 232, 255, 0.18);
       box-shadow: var(--shadow);
@@ -604,12 +610,12 @@
       border-radius: 0;
       background: transparent;
       filter:
-        brightness(1.04)
-        saturate(1)
-        contrast(1.02)
-        drop-shadow(0 0 1px rgba(232, 246, 255, 0.62))
+        brightness(1.02)
+        saturate(0.96)
+        contrast(1.04)
+        drop-shadow(0 0 1px rgba(255, 255, 255, 0.72))
         drop-shadow(0 22px 55px rgba(0, 0, 0, 0.5))
-        drop-shadow(0 0 32px rgba(43, 141, 255, 0.26));
+        drop-shadow(0 0 30px rgba(232, 246, 255, 0.2));
     }
 
     .system-copy {
@@ -935,10 +941,10 @@
       display: block;
       filter:
         contrast(1.08)
-        saturate(1.05)
+        saturate(0.98)
         drop-shadow(0 24px 44px rgba(0, 0, 0, 0.62))
-        drop-shadow(0 0 18px rgba(158, 232, 255, 0.32))
-        drop-shadow(0 0 42px rgba(43, 141, 255, 0.18));
+        drop-shadow(0 0 18px rgba(232, 246, 255, 0.28))
+        drop-shadow(0 0 42px rgba(232, 246, 255, 0.12));
     }
 
     .intro-title {
@@ -1237,6 +1243,11 @@
         white-space: nowrap;
       }
 
+      .gallery-section .section-head h2 {
+        font-size: clamp(29px, 9.2vw, 40px);
+        white-space: nowrap;
+      }
+
       .gallery-stage {
         mask-image: none;
       }
@@ -1359,7 +1370,7 @@
       <section class="content-band system-section" id="system" aria-labelledby="systemTitle">
         <div class="band-inner system-layout">
           <div class="badge-stage reveal" aria-hidden="true">
-            <img src="assets/v3/logo-qingfeng-badge-dark.png" alt="">
+            <img src="assets/v3/logo-qingfeng-badge-white-proposal.png" alt="">
           </div>
           <div class="system-copy">
             <div class="section-head system-head reveal">
@@ -1452,7 +1463,7 @@
     <div class="intro-center">
       <div class="intro-lockup">
         <div class="intro-logo-shell" aria-hidden="true">
-          <img class="intro-main-logo" src="assets/v3/logo-qingfeng-intro-mark.png" alt="">
+          <img class="intro-main-logo" src="assets/v3/logo-qingfeng-intro-mark-white-proposal.png" alt="">
         </div>
         <p class="intro-title" id="introTitle" data-text="擎风模型队"></p>
         <p class="intro-subtitle">车模 · 海模 · 航模 | SCHOOL MODEL TEAM</p>
