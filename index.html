@@ -562,7 +562,7 @@
 
     .system-layout {
       display: grid;
-      grid-template-columns: minmax(260px, 0.55fr) minmax(0, 1fr);
+      grid-template-columns: minmax(260px, 0.48fr) minmax(0, 1fr);
       gap: clamp(28px, 5vw, 72px);
       align-items: center;
     }
@@ -604,17 +604,27 @@
       border-radius: 0;
       background: transparent;
       filter:
-        brightness(1.18)
-        saturate(1.08)
-        contrast(1.03)
-        drop-shadow(0 0 1px rgba(255, 255, 255, 0.62))
+        brightness(1.04)
+        saturate(1)
+        contrast(1.02)
+        drop-shadow(0 0 1px rgba(232, 246, 255, 0.62))
         drop-shadow(0 22px 55px rgba(0, 0, 0, 0.5))
-        drop-shadow(0 0 30px rgba(43, 141, 255, 0.2));
+        drop-shadow(0 0 32px rgba(43, 141, 255, 0.26));
     }
 
     .system-copy {
       display: grid;
       gap: 22px;
+    }
+
+    .system-head {
+      display: block;
+      margin-bottom: 8px;
+    }
+
+    .system-head h2 {
+      font-size: clamp(42px, 5.2vw, 76px);
+      white-space: nowrap;
     }
 
     .system-line {
@@ -1222,6 +1232,11 @@
         min-height: 320px;
       }
 
+      .system-head h2 {
+        font-size: clamp(30px, 9vw, 40px);
+        white-space: nowrap;
+      }
+
       .gallery-stage {
         mask-image: none;
       }
@@ -1344,10 +1359,10 @@
       <section class="content-band system-section" id="system" aria-labelledby="systemTitle">
         <div class="band-inner system-layout">
           <div class="badge-stage reveal" aria-hidden="true">
-            <img src="assets/v3/logo-qingfeng-badge.png" alt="">
+            <img src="assets/v3/logo-qingfeng-badge-dark.png" alt="">
           </div>
           <div class="system-copy">
-            <div class="section-head reveal" style="display:block;margin-bottom:8px;">
+            <div class="section-head system-head reveal">
               <p class="eyebrow">TEAM ARCHITECTURE</p>
               <h2 id="systemTitle">把热爱，训练成能力。</h2>
             </div>
